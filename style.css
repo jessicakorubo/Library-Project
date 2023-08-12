@@ -9,6 +9,14 @@ body {
   height: 100vh;
 }
 
+a.add-link {
+  text-decoration: none;
+  color: white;
+  padding: 0.8rem;
+  background-color: #12e080;
+  border-radius: 10px;
+}
+
 .welcome-page {
   background-image: url("images/pickawood-8SfXsep8EIA-unsplash.jpg");
   height: 100%;
@@ -84,6 +92,11 @@ body {
 
 .header {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
 }
 .header .logo {
   display: flex;
@@ -122,42 +135,60 @@ body {
 }
 .header .header-content .admin {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: right;
   width: 100%;
+  margin-right: 1rem;
+  float: right;
+}
+.header .header-content .admin .admin-pic {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+}
+.header .header-content .admin .admin-pic img {
+  width: 100%;
+  height: 100%;
 }
 
-.dashboard {
+.main-section {
+  box-shadow: 10px 5px 5px rgba(238, 250, 126, 0.1);
+  display: flex;
+  position: relative;
+  top: 80px;
+  left: 0;
+}
+.main-section .dashboard {
+  position: fixed;
   width: 300px;
   height: calc(100vh - 70px);
   background-color: white;
   box-shadow: inset -5px 5px 10px 0px rgba(7, 7, 7, 0.1);
 }
-.dashboard .dashboard-links {
-  text-align: center;
-}
-.dashboard .dashboard-links .accordion-button:focus {
+.main-section .dashboard .dashboard-links .accordion-button:focus {
   z-index: 3;
   border-color: none;
   outline: 0;
   box-shadow: none !important;
 }
-.dashboard .dashboard-links button:focus:not(:focus-visible) {
+.main-section .dashboard .dashboard-links button:focus:not(:focus-visible) {
   outline: 0;
 }
-.dashboard .dashboard-links .accordion-button:not(.collapsed) {
+.main-section .dashboard .dashboard-links .accordion-button:not(.collapsed) {
   color: none !important;
   background-color: none !important;
   box-shadow: none !important;
 }
-.dashboard .dashboard-links .myAcc a {
+.main-section .dashboard .dashboard-links .myAcc a {
   text-decoration: none;
   margin: 1.5rem 0;
   color: inherit;
   margin-bottom: 1rem !important;
 }
-.dashboard .dashboard-links .accordion.myAcc {
+.main-section .dashboard .dashboard-links .accordion.myAcc {
   --bs-accordion-color: var(--bs-body-color);
   --bs-accordion-bg: var(--bs-body-bg);
   --bs-accordion-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
@@ -181,6 +212,97 @@ body {
   --bs-accordion-active-color: none !important;
   --bs-accordion-active-bg: gold!important;
 }
-.dashboard .dashboard-links .n02.accordion-button {
+.main-section .dashboard .dashboard-links .accordion-body {
+  padding: 1rem;
+}
+.main-section .dashboard .dashboard-links .n02.accordion-button {
   font-size: 1rem;
+}
+.main-section .dashboard .link {
+  padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+}
+.main-section .right-section {
+  width: calc(100% - 300px);
+  position: relative;
+  top: 0;
+  left: 300px;
+}
+.main-section .right-section .view-books-section {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main-section .right-section .view-books-section .view-books-table {
+  width: 95%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: white;
+  color: black;
+}
+.main-section .right-section .view-books-section .view-books-table .table-top {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-section .right-section .view-books-section .view-books-table .table-top .table-content {
+  font-size: 20px;
+}
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books {
+  width: 450px;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  opacity: 0.8;
+  color: white;
+  padding-left: 0.5rem;
+  justify-content: left;
+  align-items: center;
+  border-radius: 10px;
+}
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books i {
+  color: black;
+}
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books input {
+  width: 90%;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books input:focus {
+  border: none;
+  outline: none;
+}
+.main-section .right-section .view-books-section .view-books-table table {
+  width: 100%;
+}
+.main-section .right-section .view-books-section .view-books-table table thead {
+  color: #b4674d;
+}
+.main-section .right-section .view-books-section .view-books-table table td {
+  padding: 1rem 0.5rem;
+  margin: 1rem 0;
+  padding-left: 2.5rem;
+}
+.main-section .right-section .view-books-section .view-books-table table tbody tr button {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #12e080;
+  width: 150px;
+}
+.main-section .right-section .view-books-section .view-books-table table tbody tr button.inactive {
+  background-color: gold;
+}
+.main-section .right-section .view-books-section .view-books-table table tbody tr button.details {
+  background-color: #f1e4e0;
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=style.css.map */
