@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,13 +20,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <div class="header">
       <div class="logo">
-        <img  data-aos="fade-in" data-aos-duration="4000" src="images/L-removebg-preview.png" alt="" />
-        <h4 data-aos="fade-in" data-aos-duration="4000">MABB'S <span>LIBRARY</span></h4>
+        <img
+          data-aos="fade-in"
+          data-aos-duration="4000"
+          src="images/L-removebg-preview.png"
+          alt=""
+        />
+        <h4 data-aos="fade-in" data-aos-duration="4000">
+          MABB'S <span>LIBRARY</span>
+        </h4>
       </div>
       <div class="header-content">
         <div class="events">
@@ -69,9 +76,11 @@
                     <div class="accordion-body active">
                       <a href="view-books.html">View books</a>
                     </div>
-                    <div class="accordion-body"><a href="addBook.html">Add a book</a></div>
                     <div class="accordion-body">
-                      <a href="update-book.html">Update a book</a>
+                      <a href="addBook.html">Add a book</a>
+                    </div>
+                    <div class="accordion-body">
+                      <a href="updateBook.html">Update a book</a>
                     </div>
                     <div class="accordion-body">
                       <a href="">Delete a book</a>
@@ -161,7 +170,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-body"><a href="add-user.html">Add a user</a></div>
+                  <div class="accordion-body">
+                    <a href="add-user.html">Add a user</a>
+                  </div>
                   <div class="accordion-body"><a href="">Delete a user</a></div>
                 </div>
               </div>
@@ -177,70 +188,98 @@
       </div>
 
       <div class="right-section">
-       <div class="add-user">
-        <div class="form-container" data-aos="slide-right" data-aos-duration="4000">
+        <div class="add-user">
+          <div
+            class="form-container"
+            data-aos="slide-right"
+            data-aos-duration="4000"
+          >
             <div class="left-text">
-                <h2>New Member</h2>
-                <p>Fill in the required inputs for a new member</p>
+              <h2>New Member</h2>
+              <p>Fill in the required inputs for a new member</p>
             </div>
             <div class="right-form">
-                <div class="form-header">
-                    <h2>GENERAL INFORMATION</h2>
-                    <p>General information for new members</p>
-                </div>
-                <div class="entry">
-                    <div class="form">
-                        <div id="firstname" class="input-label">
-                            <label for="firstname">First Name</label>
-                            <div class="input-container">
-                                <i></i>
-                                <input name="firstname" type="text" placeholder="Ex: John">
-                            </div>
-                        </div>
-                        <div id="lastname" class="input-label">
-                            <label for="lastname">Last Name</label>
-                            <div class="input-container">
-                                <i></i>
-                                <input name="lastname" type="text" placeholder="Ex: Doe">
-                            </div>
-                        </div>
-                        <div id="email" class="input-label">
-                            <label for="email">Email Address</label>
-                            <div class="input-container">
-                                <i></i>
-                                <input name="email" type="text" placeholder="Ex: JohnDoe@Gmail.com">
-                            </div>
-                        </div>
-                        <div id="House Address" class="input-label">
-                            <label for="address">First Name</label>
-                            <div class="input-container">
-                                <i></i>
-                                <input name="address" type="text" placeholder="Ex: 20 Whiteman Street ...">
-                            </div>
-                        </div>
-                        <div id="city" class="input-label">
-                            <label for="city">City</label>
-                            <div class="input-container">
-                                <i></i>
-                                <input name="city" type="text" placeholder="Ex: 20 Whiteman Street ...">
-                            </div>
-                        </div>
-                        <div id="zipcode" class="input-label">
-                            <label for="zipcode">Zip Code</label>
-                            <div class="input-container">
-                                <i></i>
-                                <input name="zipcode" type="text" placeholder="Ex: 20 Whiteman Street ...">
-                            </div>
-                        </div>
+              <div class="form-header">
+                <h2>GENERAL INFORMATION</h2>
+                <p>General information for new members</p>
+              </div>
+              <div class="entry">
+                <div class="form">
+                  <div id="firstname" class="input-label">
+                    <label for="firstname">First Name</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="firstname"
+                        type="text"
+                        placeholder="Ex: John"
+                      />
                     </div>
-                    <div class="submit-container">
-                        <input class="reset" type="reset" value="Cancel">
-                        <input class="submit" type="submit" value="Submit">
+                  </div>
+                  <div id="lastname" class="input-label">
+                    <label for="lastname">Last Name</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="lastname"
+                        type="text"
+                        placeholder="Ex: Doe"
+                      />
                     </div>
+                  </div>
+                  <div id="email" class="input-label">
+                    <label for="email">Email Address</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="email"
+                        type="text"
+                        placeholder="Ex: JohnDoe@Gmail.com"
+                      />
+                    </div>
+                  </div>
+                  <div id="House Address" class="input-label">
+                    <label for="address">First Name</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="address"
+                        type="text"
+                        placeholder="Ex: 20 Whiteman Street ..."
+                      />
+                    </div>
+                  </div>
+                  <div id="city" class="input-label">
+                    <label for="city">City</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="city"
+                        type="text"
+                        placeholder="Ex: 20 Whiteman Street ..."
+                      />
+                    </div>
+                  </div>
+                  <div id="zipcode" class="input-label">
+                    <label for="zipcode">Zip Code</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="zipcode"
+                        type="text"
+                        placeholder="Ex: 20 Whiteman Street ..."
+                      />
+                    </div>
+                  </div>
                 </div>
+                <div class="submit-container">
+                  <input class="reset" type="reset" value="Cancel" />
+                  <input class="submit" type="submit" value="Submit" />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-       </div>
       </div>
     </div>
 
@@ -252,7 +291,7 @@
     ></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
   </body>
 </html>

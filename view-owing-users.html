@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,13 +20,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-      
   </head>
   <body>
     <div class="header">
       <div class="logo">
-        <img data-aos="fade-in" data-aos-duration="4000" src="images/L-removebg-preview.png" alt="" />
-        <h4 data-aos="fade-in" data-aos-duration="4000">MABB'S <span>LIBRARY</span></h4>
+        <img
+          data-aos="fade-in"
+          data-aos-duration="4000"
+          src="images/L-removebg-preview.png"
+          alt=""
+        />
+        <h4 data-aos="fade-in" data-aos-duration="4000">
+          MABB'S <span>LIBRARY</span>
+        </h4>
       </div>
       <div class="header-content">
         <div class="events">
@@ -43,45 +49,133 @@
     </div>
 
     <div class="main-section">
-        
-        <div class="dashboard">
-            <div>
-            <div class="dashboard-links">
-                <div class="accordion myAcc" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                    <button
-                        class="accordion-button collapsed"
+      <div class="dashboard">
+        <div>
+          <div class="dashboard-links">
+            <div class="accordion myAcc" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="false"
+                    aria-controls="collapseOne"
+                  >
+                    Manage Books
+                  </button>
+                </h2>
+
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="accordion-body active">
+                      <a href="view-books.html">View books</a>
+                    </div>
+                    <div class="accordion-body">
+                      <a href="addBook.html">Add a book</a>
+                    </div>
+                    <div class="accordion-body">
+                      <a href="updateBook.html">Update a book</a>
+                    </div>
+                    <div class="accordion-body">
+                      <a href="">Delete a book</a>
+                    </div>
+                    <div class="accordion-body">
+                      <a href="borrowed.html">Borrowed Books</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Reports and statistics
+                  </button>
+                </h2>
+
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="accordion-body">
+                      <a href="">All reports</a>
+                    </div>
+                    <div class="accordion-body">
+                      <a href="">Total number of borrowed books</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" id="user-id">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#view-users"
+                    aria-expanded="true"
+                    aria-controls="view-users"
+                  >
+                    Users
+                  </button>
+                </h2>
+
+                <div
+                  class="accordion myAcc accordion-collapse collapse"
+                  id="view-users"
+                  data-bs-parent="#user-id"
+                >
+                  <div class="accordion-body">
+                    <h2>
+                      <button
+                        class="accordion-button n02 collapsed"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne"
+                        data-bs-target="#collapse-user-view"
                         aria-expanded="false"
-                        aria-controls="collapseOne"
-                    >
-                        Manage Books
-                    </button>
+                        aria-controls="collapse-user-view"
+                      >
+                        View Library Users
+                      </button>
                     </h2>
 
                     <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
+                      class="accordion-collapse collapse"
+                      id="collapse-user-view"
+                      data-bs-parent="#view-users"
                     >
-                    <div class="accordion-body">
-                        <div class="accordion-body active">
-                        <a href="view-books.html">View books</a>
-                        </div>
-                        <div class="accordion-body"><a href="">Add a book</a></div>
+                      <div class="accordion-body">
                         <div class="accordion-body">
-                        <a href="update-book.html">Update a book</a>
+                          <a href="view-owing-users.html">View Owing Users </a>
                         </div>
+                      </div>
+                      <div class="accordion-body">
                         <div class="accordion-body">
-                        <a href="">Delete a book</a>
+                          <a href="#">View all Users </a>
                         </div>
-                        <div class="accordion-body">
-                        <a href="borrowed.html">Borrowed Books</a>
-                        </div>
+                      </div>
                     </div>
+<<<<<<< HEAD
+                  </div>
+                  <div class="accordion-body">
+                    <a href="add-user.html">Add a user</a>
+                  </div>
+                  <div class="accordion-body"><a href="">Delete a user</a></div>
+=======
                     </div>
                 </div>
                 <div class="accordion-item">
@@ -173,12 +267,99 @@
                 <div class="link">
                     <a href="">Logout</a>
                 </div>
+>>>>>>> 6e5611f5084a4aaf89d580fad588812ba8e9aedb
                 </div>
+              </div>
+              <div class="link">
+                <a href="">New Element</a>
+              </div>
+              <div class="link">
+                <a href="">Logout</a>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
+      </div>
 
       <div class="right-section">
+<<<<<<< HEAD
+        <div class="borrowed-section">
+          <div class="view-books-table">
+            <div class="table-top">
+              <div class="table-content">BORROWED BOOKS</div>
+            </div>
+            <div class="table-body">
+              <table>
+                <thead>
+                  <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Book Title</td>
+                    <td>Author</td>
+                    <td>Copies Taken</td>
+                    <td>Borrowed Date</td>
+                    <td>Due Date</td>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Elizabeth</td>
+                    <td>Collins</td>
+                    <td>Normal People</td>
+                    <td>Sally Rooney</td>
+                    <td>1</td>
+                    <td>12/07/2023</td>
+                    <td>19/08/2023</td>
+                  </tr>
+                  <tr>
+                    <td>Nathaniel</td>
+                    <td>Okechuku</td>
+                    <td>Travels with my Aunt</td>
+                    <td>Graham Greene</td>
+                    <td>1</td>
+                    <td>11/08/2023</td>
+                    <td>20/08/2023</td>
+                  </tr>
+                  <tr>
+                    <td>Richard</td>
+                    <td>Atodo</td>
+                    <td>Fundamenals of Javascript</td>
+                    <td>David Beckham</td>
+                    <td>1</td>
+                    <td>6/09/2023</td>
+                    <td>13/09/2023</td>
+                  </tr>
+                  <tr>
+                    <td>Jennifer</td>
+                    <td>Rogers</td>
+                    <td>Normal People</td>
+                    <td>All the Light we Cannot See</td>
+                    <td>1</td>
+                    <td>11/05/2023</td>
+                    <td>18/06/2023</td>
+                  </tr>
+                  <tr>
+                    <td>Elizabeth</td>
+                    <td>Collins</td>
+                    <td>Normal People</td>
+                    <td>Sally Rooney</td>
+                    <td>1</td>
+                    <td>12/08/2023</td>
+                    <td>19/08/2023</td>
+                  </tr>
+                  <tr>
+                    <td>Benedict</td>
+                    <td>PNyechere</td>
+                    <td>All the Light we Cannot See</td>
+                    <td>Anthony Doerr</td>
+                    <td>1</td>
+                    <td>05/09/2023</td>
+                    <td>12/09/2023</td>
+                  </tr>
+                </tbody>
+              </table>
+=======
             <div class="borrowed-section">
                 <div class="view-books-table">
 
@@ -268,10 +449,13 @@
                         </tbody>
                     </table>
                 </div>
+>>>>>>> 6e5611f5084a4aaf89d580fad588812ba8e9aedb
             </div>
-             
-        `</div>
           </div>
+
+          `
+        </div>
+      </div>
     </div>
 
     <script src="index.js"></script>
@@ -281,8 +465,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

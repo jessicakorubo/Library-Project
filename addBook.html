@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View books</title>
-      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Add a book</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,22 +19,31 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-     
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
-    
     <div class="header">
       <div class="logo">
-        <img data-aos="fade-in" data-aos-duration="4000" src="images/L-removebg-preview.png" alt="" />
-        <h4 data-aos="fade-in" data-aos-duration="4000">MABB'S <span>LIBRARY</span></h4>
+        <img
+          data-aos="fade-in"
+          data-aos-duration="4000"
+          src="images/L-removebg-preview.png"
+          alt=""
+        />
+        <h4 data-aos="fade-in" data-aos-duration="4000">
+          MABB'S <span>LIBRARY</span>
+        </h4>
       </div>
       <div class="header-content">
         <div class="events">
           <a href="#">Upcoming Events</a>
         </div>
         <div class="admin">
-          <i></i>
-          <p>Admin</p>
+          <div class="admin-pic">
+            <a href="">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -69,7 +77,7 @@
                     </div>
                     <div class="accordion-body"><a href="">Add a book</a></div>
                     <div class="accordion-body">
-                      <a href="">Update a book</a>
+                      <a href="updateBook.html">Update a book</a>
                     </div>
                     <div class="accordion-body">
                       <a href="">Delete a book</a>
@@ -173,91 +181,77 @@
           </div>
         </div>
       </div>
+
       <div class="right-section">
-        <div class="view-books-section">
-          <div class="view-books-table">
-            <div class="table-top">
-              <div class="table-content">BOOK'S TABLE</div>
-              <div class="book-new">
-                <div class="search-books">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <hr />
-                  <input type="text" placeholder="Search book..." />
-                </div>
-                <div class="add-book">
-                  <a class="add-link" href="#">update Book</a>
-                </div>
-              </div>
+        <div class="add-user">
+          <div
+            class="form-container"
+            data-aos="slide-right"
+            data-aos-duration="4000"
+          >
+            <div class="left-text">
+              <h2>New Books</h2>
+              <p>Fill in the required inputs for new books</p>
             </div>
-
-            <div>
-              <div class="form-container">
-                <form action="/action_page.php" method="post" class="loginPage">
-                  <h2 class="addBook">Add Book</h2>
-
-                  <div class="field-container id-title">
-                    <div class="card-container id-titleX">
-                      <div class="cards">
-                        <label for="ID" class="numberlabel"><b>ID</b></label>
-                        <input type="number" class="number" />
-                      </div>
-
-                      <div class="cards">
-                        <label for="uname" class="titleLabel"
-                          ><b>bookTitle</b></label
-                        >
-                        <input
-                          type="text"
-                          placeholder="Enter title"
-                          name="uname"
-                          class="title"
-                          required
-                        />
-                      </div>
+            <div class="right-form">
+              <div class="form-header">
+                <h2>GENERAL Details</h2>
+                <p>General details for new books</p>
+              </div>
+              <div class="entry">
+                <div class="form">
+                  <div id="isbn" class="input-label">
+                    <label for="isbn">ISBN</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input name="isbn" type="text" placeholder="Ex: 12bn" />
                     </div>
-
-                    <div class="card-container author-genre">
-                      <div class="cards">
-                        <label for="auth" class="authorLabel"
-                          ><b>Author</b></label
-                        >
-                        <input
-                          type="text"
-                          placeholder="Enter Author"
-                          name="auth"
-                          class="author"
-                          required
-                        />
-                      </div>
-
-                      <div class="cards">
-                        <label for="gen" class="genreLabel"><b>Genre</b></label>
-                        <input
-                          type="text"
-                          placeholder="Enter Genre"
-                          name="gen"
-                          class="genre"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div class="nfc">
-                      <label for="num" cl><b>NFC</b></label>
+                  </div>
+                  <div id="booktitle" class="input-label">
+                    <label for="lastname">Book Title</label>
+                    <div class="input-container">
+                      <i></i>
                       <input
-                        class="nfcInput"
-                        type="number"
-                        placeholder="Enter Number Of Copies"
-                        name="num"
-                        required
+                        name="booktitle"
+                        type="text"
+                        placeholder="Ex: devils fire"
                       />
                     </div>
-                    <!-- <div class="login"> -->
-                    <button type="submit" class="login">Add</button>
-                    <label class="rememberMe"> </label>
-                    <!-- </div> -->
                   </div>
-                </form>
+                  <div id="email" class="input-label">
+                    <label for="email">Author</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="auhtor"
+                        type="text"
+                        placeholder="Ex: John Doe"
+                      />
+                    </div>
+                  </div>
+                  <div id="House Address" class="input-label">
+                    <label for="address">Genre</label>
+                    <div class="input-container">
+                      <i></i>
+                      <input
+                        name="address"
+                        type="text"
+                        placeholder="Ex: Romance, novel..."
+                      />
+                    </div>
+                  </div>
+                  <div id="city" class="input-label">
+                    <label for="city">Number Of Copies</label>
+                    <div class="input-container noc">
+                      <i></i>
+                      <input name="copies" type="number" placeholder="1" />
+                    </div>
+                  </div>
+                </div>
+                <div class="submit-container">
+                  <input class="reset" type="reset" value="Cancel" />
+                  <input class="submit" type="submit" value="Submit" />
+                </div>
               </div>
             </div>
           </div>
@@ -271,9 +265,9 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-    AOS.init();
-  </script>
+      AOS.init();
+    </script>
   </body>
 </html>
