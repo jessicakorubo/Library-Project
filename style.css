@@ -9,26 +9,74 @@ body {
   height: 100vh;
 }
 
-.form .input-label {
-  width: 50%;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid green;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: none;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }
-.form .input-label .input-container {
+
+.entry .form {
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.entry .form .input-label .input-container {
   border: 1px solid white;
   border-radius: 6px;
   padding: 0.5rem 1rem;
   background: linear-gradient(184deg, rgb(80, 58, 36) 17%, rgb(163, 112, 75) 50%, rgb(156, 110, 75) 75%, #c7935d 86%);
 }
-.form .input-label .input-container input {
+.entry .form .input-label .input-container input {
   width: 90%;
   outline: none;
   border: none;
+  color: white;
   background-color: transparent;
 }
-.form .input-label .input-container input::-moz-placeholder {
+.entry .form .input-label .input-container input :focus .input-container {
+  border: 1px dotted white;
+}
+.entry .form .input-label .input-container input::-moz-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+.entry .form .input-label .input-container input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+.entry .submit-container {
+  float: right;
+  padding: 1rem 0;
+}
+.entry .submit-container .reset, .entry .submit-container .submit {
+  padding: 0.8rem 1.5rem;
+  color: black;
+  border-radius: 10px;
+  font-weight: 900px;
+  transition: border 0.5s, background-color 0.5s, color 0.5s;
+}
+.entry .submit-container .reset:hover, .entry .submit-container .submit:hover {
+  background-color: transparent;
   color: white;
 }
-.form .input-label .input-container input::placeholder {
-  color: white;
+.entry .submit-container .reset {
+  border: 1px dahsed rgb(241, 247, 188);
+  background-color: rgb(241, 247, 188);
+}
+.entry .submit-container .submit {
+  border: 1px dahsed #ffd700;
+  background: #ffd700;
 }
 
 a.add-link {
@@ -286,22 +334,41 @@ table tbody tr button.details {
 .main-section .right-section {
   width: calc(100% - 300px);
   position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
   top: 0;
   left: 300px;
 }
+.main-section .right-section > div {
+  min-height: 100vh;
+  box-shadow: inset 15px 10px 20px rgba(0, 0, 0, 0.5);
+}
 .main-section .right-section .add-user .form-container {
-  background-color: rgb(45, 107, 241);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border-radius: 10px;
   width: 90%;
+  padding: 1rem;
   margin: auto;
+  margin-top: 30px;
   display: flex;
+  gap: 2rem;
 }
 .main-section .right-section .add-user .form-container .left-text {
-  width: 30%;
+  width: 25%;
+}
+.main-section .right-section .add-user .form-container .left-text h2 {
+  font-size: 20px;
+  opacity: 0.7;
 }
 .main-section .right-section .add-user .form-container .right-form {
-  width: 70%;
+  width: 75%;
+}
+.main-section .right-section .add-user .form-container .right-form .form-header {
+  margin-bottom: 20px;
+}
+.main-section .right-section .add-user .form-container .right-form .form-header h2 {
+  font-size: 20px;
 }
 .main-section .right-section .view-books-section, .main-section .right-section .borrowed-section, .main-section .right-section .add-user {
   width: 100%;
