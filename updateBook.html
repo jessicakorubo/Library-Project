@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add a User</title>
+    <title>update a Book</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="updateBook.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -79,7 +79,7 @@
                       <a href="addBook.html">Add a book</a>
                     </div>
                     <div class="accordion-body">
-                      <a href="updateBook.html">Update a book</a>
+                      <a href="">Update a book</a>
                     </div>
                     <div class="accordion-body">
                       <a href="">Delete a book</a>
@@ -159,7 +159,7 @@
                     >
                       <div class="accordion-body">
                         <div class="accordion-body">
-                          <a href="view-owing-users.html">View Owing Users </a>
+                          <a href="#">View Owing Users </a>
                         </div>
                       </div>
                       <div class="accordion-body">
@@ -169,9 +169,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-body">
-                    <a href="add-user.html">Add a user</a>
-                  </div>
+                  <div class="accordion-body"><a href="">Add a user</a></div>
                   <div class="accordion-body"><a href="">Delete a user</a></div>
                 </div>
               </div>
@@ -194,80 +192,61 @@
             data-aos-duration="4000"
           >
             <div class="left-text">
-              <h2>New Member</h2>
-              <p>Fill in the required inputs for a new member</p>
+              <h2>Update Books</h2>
+              <p>Fill in the required inputs to update book</p>
             </div>
             <div class="right-form">
               <div class="form-header">
-                <h2>GENERAL INFORMATION</h2>
-                <p>General information for new members</p>
+                <h2>GENERAL Details</h2>
+                <p>General details to update books</p>
               </div>
               <div class="entry">
                 <div class="form">
-                  <div id="firstname" class="input-label">
-                    <label for="firstname">First Name</label>
+                  <div id="isbn" class="input-label">
+                    <label for="isbn">ISBN</label>
                     <div class="input-container">
                       <i></i>
-                      <input
-                        name="firstname"
-                        type="text"
-                        placeholder="Ex: John"
-                      />
+                      <input name="isbn" type="text" placeholder="Ex: 12bn" />
                     </div>
                   </div>
-                  <div id="lastname" class="input-label">
-                    <label for="lastname">Last Name</label>
+                  <div id="booktitle" class="input-label">
+                    <label for="lastname">Book Title</label>
                     <div class="input-container">
                       <i></i>
                       <input
-                        name="lastname"
+                        name="booktitle"
                         type="text"
-                        placeholder="Ex: Doe"
+                        placeholder="Ex: devils fire"
                       />
                     </div>
                   </div>
                   <div id="email" class="input-label">
-                    <label for="email">Email Address</label>
+                    <label for="email">Author</label>
                     <div class="input-container">
                       <i></i>
                       <input
-                        name="email"
+                        name="auhtor"
                         type="text"
-                        placeholder="Ex: JohnDoe@Gmail.com"
+                        placeholder="Ex: John Doe"
                       />
                     </div>
                   </div>
                   <div id="House Address" class="input-label">
-                    <label for="address">First Name</label>
+                    <label for="address">Genre</label>
                     <div class="input-container">
                       <i></i>
                       <input
                         name="address"
                         type="text"
-                        placeholder="Ex: 20 Whiteman Street ..."
+                        placeholder="Ex: Romance, novel..."
                       />
                     </div>
                   </div>
                   <div id="city" class="input-label">
-                    <label for="city">City</label>
-                    <div class="input-container">
+                    <label for="city">Number Of Copies</label>
+                    <div class="input-container noc">
                       <i></i>
-                      <input
-                        name="city"
-                        type="text"
-                        placeholder="Ex: 20 Whiteman Street ..."
-                      />
-                    </div>
-                  </div>
-                  <div id="zipcode" class="input-label">
-                    <label for="zipcode">Zip Code</label>
-                    <div class="input-container">
-                      <i></i>
-                      <input
-                        name="zipcode"
-                        type="text"
-                        placeholder="Ex: 20 Whiteman Street ..."
-                      />
+                      <input name="copies" type="number" placeholder="1" />
                     </div>
                   </div>
                 </div>
