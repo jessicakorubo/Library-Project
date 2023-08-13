@@ -77,6 +77,7 @@ select:-webkit-autofill:focus {
         .reset, .submit {
             padding: 0.8rem 1.5rem;
             color: black;
+            border: none;
             border-radius: 10px;
             font-weight: 900px;
             transition: border 0.5s, background-color 0.5s, color 0.5s;
@@ -84,10 +85,11 @@ select:-webkit-autofill:focus {
             &:hover {
                 background-color: transparent;
                 color: white;
+                box-shadow: 0px 5px 7px rgba(13, 110, 253, 0.25);
             }
         }
         .reset {
-            border:1px dahsed rgb(241, 247, 188);
+            border:1px dahd rgb(241, 247, 188);
             background-color: rgb(241, 247, 188);
         }
         .submit {
@@ -407,7 +409,7 @@ table {
         .add-user {
 
             .form-container {
-                background-color: rgba(0,0,0,0.7);
+                background: linear-gradient(to right, rgb(130, 89, 241), rgb(253, 89, 60));
                 color: white;
                 border-radius: 10px;
                 width: 90%;
