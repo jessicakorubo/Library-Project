@@ -105,12 +105,18 @@ a.add-link {
     text-decoration: none;
     color:$secondary-color;
     padding: 0.8rem;
-    background-color: #12e080;
+    background: linear-gradient( 184deg,
+                    rgba(80, 58, 36, 1) 17%,
+                    rgba(163, 112, 75, 1) 50%,
+                    rgba(156, 110, 75, 1) 75%,
+                    #c7935d 86%);
+
     border-radius: 10px;
 }
 table {
     width: 100%;
-    
+    overflow-x: auto;
+
     thead {
         color: $wooden-color;
     }
@@ -450,7 +456,7 @@ table {
             position: absolute;
             top: 0;
             left: 0;
-            // height: 100vh;
+
 
             .view-books-table {
                 width: 95%;
@@ -463,7 +469,9 @@ table {
                     display: flex;
                     padding: 2rem;
                     justify-content: space-between;
+                    padding-right: 0;
                     align-items: center;
+                    width: calc(100vw - 400px);
 
                     .table-content {
                         font-size: 20px;
@@ -512,3 +520,17 @@ table {
     }
 }
    
+
+
+@media screen and (max-width:750px){
+    .dashboard {
+        display: none;
+    }
+    .main-section {
+
+        .right-section {
+            left: 0;
+    }
+    }
+    
+}
