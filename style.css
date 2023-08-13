@@ -343,7 +343,7 @@ table tbody tr button.details {
 }
 .main-section .right-section > div {
   min-height: 100vh;
-  box-shadow: inset 15px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 10px 20px 10px rgba(0, 0, 0, 0.2);
 }
 .main-section .right-section .add-user .form-container {
   background: linear-gradient(to right, rgb(130, 89, 241), rgb(253, 89, 60));
