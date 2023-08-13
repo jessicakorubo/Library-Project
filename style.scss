@@ -11,6 +11,35 @@ body {
 }
 // GLOBAL STYLES 
 
+.form {
+
+    .input-label {
+        width: 50%;
+
+        .input-container { 
+            border: 1px solid white;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            background: linear-gradient( 184deg,
+                rgba(80, 58, 36, 1) 17%,
+                rgba(163, 112, 75, 1) 50%,
+                rgba(156, 110, 75, 1) 75%,
+                #c7935d 86%);
+
+            input {
+                width: 90%;
+                outline: none;
+                border: none;
+                background-color: transparent;
+            } 
+            input::placeholder{
+                color: white;
+            }
+        }
+    }
+    
+}
+
 a.add-link {
     text-decoration: none;
     color:$secondary-color;
@@ -63,7 +92,7 @@ table {
     }
 }
 
-                // END OF GLOBAL STYLES
+// END OF GLOBAL STYLES
 .welcome-page {
     background-image: url('images/pickawood-8SfXsep8EIA-unsplash.jpg');
     height: 100%;
@@ -306,8 +335,32 @@ table {
         top: 0;
         left: 300px;
 
+        // ADD USER 
+
+        .add-user {
+
+            .form-container {
+            background-color:rgb(45, 107, 241);
+            color: white;
+            border-radius: 10px;
+            width: 90%;
+            margin: auto;
+            display: flex;
+
+
+            .left-text {
+                width: 30%;
+
+            }
+            .right-form {
+                width: 70%;
+            }
+        }
+        }
+       
+        // END OF ADD USER
         
-        .view-books-section , .borrowed-section{
+        .view-books-section , .borrowed-section, .add-user{
             width: 100%;
             position: absolute;
             top: 0;
