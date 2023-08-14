@@ -133,39 +133,6 @@ table tbody tr button.details {
   width: -moz-fit-content;
   width: fit-content;
 }
-table tbody tr button.delete {
-  background-color: rgb(248, 79, 79);
-  color: white;
-  width: 100px;
-}
-
-div.button-div {
-  position: relative;
-}
-div.button-div .popup {
-  position: absolute;
-  top: calc(100% + 30px);
-  left: -100%;
-  z-index: 1;
-  display: none;
-  background-color: #75e012;
-  width: 200px;
-  border-radius: 10px;
-  height: 120px;
-  text-align: center;
-}
-div.button-div .popup .delete-options {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-div.button-div .popup .delete-options a {
-  color: white;
-  text-decoration: none;
-  border: 1px solid white;
-  padding: 0 0.5rem;
-  border-radius: 5px;
-}
 
 .welcome-page {
   background-image: url("images/pickawood-8SfXsep8EIA-unsplash.jpg");
@@ -323,7 +290,6 @@ div.button-div .popup .delete-options a {
   position: fixed;
   width: 300px;
   height: calc(100vh - 70px);
-  overflow-y: scroll;
   background-color: white;
   box-shadow: inset -5px 5px 10px 0px rgba(7, 7, 7, 0.1);
 }
@@ -396,7 +362,7 @@ div.button-div .popup .delete-options a {
   min-height: 100vh;
   box-shadow: inset 15px 10px 20px rgba(0, 0, 0, 0.5);
 }
-/* .main-section .right-section .add-user .form-container {
+.main-section .right-section .add-user .form-container {
   background: linear-gradient(to right, rgb(130, 89, 241), rgb(253, 89, 60));
   color: white;
   border-radius: 10px;
@@ -406,7 +372,7 @@ div.button-div .popup .delete-options a {
   margin-top: 30px;
   display: flex;
   gap: 2rem;
-} */
+}
 .main-section .right-section .add-user .form-container .left-text {
   width: 25%;
 }
@@ -614,69 +580,4 @@ div.button-div .popup .delete-options a {
 
 .noc {
   width: 29%;
-}
-
-.add-user {
-  padding: 50px;
-  background-color: rgb(234, 232, 232);
-  overflow: hidden;
-}
-
-.form-container {
-  height: 60%;
-  margin: 20px;
-  margin-right: 0 !important;
-  padding: 30px;
-  overflow: hidden;
-}
-
-/* style */
-
-.card-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  height: 500px;
-}
-
-.card {
-  width: 30%;
-  height: 200px;
-  border-radius: 0;
-  outline: none;
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-}
-
-.cardOne {
-  background-color: gold;
-}
-.cardTwo {
-  background-color: #b4674d;
-}
-.cardThree {
-  background-color: green;
-}
-.cardFour {
-  background-color: blue;
-}
-.cardSix {
-  background: rgb(80, 58, 36);
-  background: linear-gradient(
-    184deg,
-    rgba(80, 58, 36, 1) 17%,
-    rgba(163, 112, 75, 1) 50%,
-    rgba(156, 110, 75, 1) 75%,
-    rgba(199, 147, 93, 1) 86%
-  );
-}
-.bookText {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.cardNumber {
 }

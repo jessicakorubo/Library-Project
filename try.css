@@ -133,39 +133,6 @@ table tbody tr button.details {
   width: -moz-fit-content;
   width: fit-content;
 }
-table tbody tr button.delete {
-  background-color: rgb(248, 79, 79);
-  color: white;
-  width: 100px;
-}
-
-div.button-div {
-  position: relative;
-}
-div.button-div .popup {
-  position: absolute;
-  top: calc(100% + 30px);
-  left: -100%;
-  z-index: 1;
-  display: none;
-  background-color: #75e012;
-  width: 200px;
-  border-radius: 10px;
-  height: 120px;
-  text-align: center;
-}
-div.button-div .popup .delete-options {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-div.button-div .popup .delete-options a {
-  color: white;
-  text-decoration: none;
-  border: 1px solid white;
-  padding: 0 0.5rem;
-  border-radius: 5px;
-}
 
 .welcome-page {
   background-image: url("images/pickawood-8SfXsep8EIA-unsplash.jpg");
@@ -323,7 +290,6 @@ div.button-div .popup .delete-options a {
   position: fixed;
   width: 300px;
   height: calc(100vh - 70px);
-  overflow-y: scroll;
   background-color: white;
   box-shadow: inset -5px 5px 10px 0px rgba(7, 7, 7, 0.1);
 }
