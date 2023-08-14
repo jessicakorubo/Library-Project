@@ -582,6 +582,16 @@ table tbody tr button.details {
   width: 29%;
 }
 
+.add-user{
+  padding: 50px;
+}
+
+.form-container{
+  height: 60%;
+  margin: 20px;
+  padding: 30px;
+}
+
 /* style */
 
 .right-form {
@@ -591,7 +601,6 @@ table tbody tr button.details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 15%;
   /* margin-left: 15%; */
 }
 
@@ -599,19 +608,15 @@ table tbody tr button.details {
   justify-content: space-around;
 }
 .cardOne {
-  margin-left: 20%;
   border: 3px solid green;
-  width: 100%;
 }
 
 .cardTwo {
   /* background-color: aliceblue;
   border: 3px solid green; */
-  margin-left: 30%;
 }
 
 .cardThree {
-  margin-left: 30%;
 }
 
 .bookText {
