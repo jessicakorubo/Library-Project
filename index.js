@@ -15,3 +15,34 @@ my_btn.forEach(btn => {
     }
     
 });
+const delBtn = document.querySelectorAll('button.delete');
+        let x = false; 
+
+delBtn.forEach(btn => {
+    
+    btn.addEventListener('click', (e)=> {
+        x = true;
+        var tar = e.target.nextElementSibling;
+        console.log(tar);
+        tar.style.display= "block";
+        console.log(x, 'first time x');
+        
+         if (x==true){
+            window.addEventListener('click', ()=> {
+            if (tar.style.display= "none"){
+                tar.style.display= "block";
+            }
+            else 
+                if(tar.style.display= "block"){
+                    tar.style.display= "none"
+                }
+            }  
+        )
+        console.log(x, 'second time x');
+         }     
+        
+    })
+
+});
+
+
