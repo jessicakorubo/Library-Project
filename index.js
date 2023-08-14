@@ -27,8 +27,12 @@ delBtn.forEach(btn => {
         tar.classList.add('active');
         e.stopPropagation();
                 
-        document.addEventListener('click', ()=> {
+        document.addEventListener('click', (e)=> {
+            // var eventAdded = true;
             tar.classList.remove('active');
+            if(e.target == btn) {
+                tar.classList.add('active');
+            } 
         })
         
     })

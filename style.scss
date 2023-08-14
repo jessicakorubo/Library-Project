@@ -172,14 +172,20 @@ div.button-div {
     top: calc(100% + 30px);
     left: -100%;
     z-index: 1;
-    // display: none;
-    background-color: #75e012;
+    display: none;
+    background: linear-gradient( 184deg,
+                    rgba(80, 58, 36, 1) 17%,
+                    rgba(163, 112, 75, 1) 50%,
+                    rgba(156, 110, 75, 1) 75%,
+                    #c7935d 86%);
     width: 200px;
     border-radius: 10px;
     height: 120px;
+    color:white;
+    padding: 1rem;
     text-align: center;
     
-    .active {
+    &.active {
         display: block;
     }
     .delete-options {
