@@ -582,9 +582,11 @@ table tbody tr button.details {
   width: 29%;
 }
 
+
 .add-user{
   padding: 50px;
   background-color: rgb(234, 232, 232);
+  overflow: hidden;
 }
 
 .form-container{
@@ -592,6 +594,7 @@ table tbody tr button.details {
   margin: 20px;
   margin-right: 0 !important;
   padding: 30px;
+  overflow: hidden;
 }
 
 /* style */
