@@ -582,14 +582,13 @@ table tbody tr button.details {
   width: 29%;
 }
 
-
-.add-user{
+.add-user {
   padding: 50px;
   background-color: rgb(234, 232, 232);
   overflow: hidden;
 }
 
-.form-container{
+.form-container {
   height: 60%;
   margin: 20px;
   margin-right: 0 !important;
@@ -607,8 +606,7 @@ table tbody tr button.details {
   height: 500px;
 }
 
-
-.card{
+.card {
   width: 30%;
   height: 200px;
   border-radius: 0;
@@ -619,9 +617,28 @@ table tbody tr button.details {
   padding: 15px;
 }
 
-
-
-
+.cardOne {
+  background-color: gold;
+}
+.cardTwo {
+  background-color: #b4674d;
+}
+.cardThree {
+  background-color: green;
+}
+.cardFour {
+  background-color: blue;
+}
+.cardSix {
+  background: rgb(80, 58, 36);
+  background: linear-gradient(
+    184deg,
+    rgba(80, 58, 36, 1) 17%,
+    rgba(163, 112, 75, 1) 50%,
+    rgba(156, 110, 75, 1) 75%,
+    rgba(199, 147, 93, 1) 86%
+  );
+}
 .bookText {
   font-size: 20px;
   font-weight: bold;
