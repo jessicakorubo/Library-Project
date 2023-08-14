@@ -584,46 +584,45 @@ table tbody tr button.details {
 
 .add-user{
   padding: 50px;
+  background-color: rgb(234, 232, 232);
 }
 
 .form-container{
   height: 60%;
   margin: 20px;
+  margin-right: 0 !important;
   padding: 30px;
 }
 
 /* style */
 
-.right-form {
-  /* padding-left: 15%; */
-}
-.bookDetails {
+.card-container {
   display: flex;
-  flex-direction: row;
+  width: 100%;
   justify-content: space-between;
-  /* margin-left: 15%; */
+  flex-wrap: wrap;
+  height: 500px;
 }
 
-.cards {
-  justify-content: space-around;
-}
-.cardOne {
-  border: 3px solid green;
+
+.card{
+  width: 30%;
+  height: 200px;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
 }
 
-.cardTwo {
-  /* background-color: aliceblue;
-  border: 3px solid green; */
-}
 
-.cardThree {
-}
+
 
 .bookText {
-  font-size: 70%;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .cardNumber {
-  padding-top: 60%;
 }
