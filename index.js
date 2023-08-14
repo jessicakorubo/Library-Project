@@ -16,33 +16,58 @@ my_btn.forEach(btn => {
     
 });
 const delBtn = document.querySelectorAll('button.delete');
-        let x = false; 
+
 
 delBtn.forEach(btn => {
     
     btn.addEventListener('click', (e)=> {
-        x = true;
+        
         var tar = e.target.nextElementSibling;
         console.log(tar);
-        tar.style.display= "block";
-        console.log(x, 'first time x');
-        
-         if (x==true){
-            window.addEventListener('click', ()=> {
-            if (tar.style.display= "none"){
-                tar.style.display= "block";
-            }
-            else 
-                if(tar.style.display= "block"){
-                    tar.style.display= "none"
-                }
-            }  
-        )
-        console.log(x, 'second time x');
-         }     
+        tar.classList.add('active');
+        e.stopPropagation();
+                
+        document.addEventListener('click', ()=> {
+            tar.classList.remove('active');
+        })
         
     })
 
 });
+// delBtn.forEach(btn => {
+    
+//     btn.addEventListener('click', (e)=> {
+        
+//         var tar = e.target.nextElementSibling;
+//         console.log(tar);
+//         tar.classList.add('active');
+//         e.stopPropagation();
+                
+//         document.addEventListener('click', ()=> {
+//             tar.classList.remove('active');
+//         })
+        
+//     })
+
+// });
+var buttonDiv = document.querySelectorAll('.button-div');
+
+// buttonDiv.forEach(mybtn => {
+//     var mydel = mybtn.querySelector('.delete');
+//     var mypopup = mybtn.querySelector('.popup');
+
+//     mydel.addEventListener('click', (e)=> {
+//         e.stopPropagation;
+//         mypopup.classList.toggle('active');
+//         console.info('You have clicked on the delete button')
+//     })
+
+//     window.onclick = function(){
+//     if (mypopup.style.display = "block") {
+//         mypopup.style.display = 'none';
+//     }
+// }
+  
 
 
+  
