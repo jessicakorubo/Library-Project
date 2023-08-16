@@ -67,7 +67,7 @@ button.click(login);
 
 $(document).keypress((e) => {
   let key;
-  if (window.event) {
+  if (window.e) {
     key = e.charCode;
   } else key = e.which;
 
