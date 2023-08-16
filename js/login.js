@@ -132,7 +132,7 @@ $("#close").click((e) => {
 function getAuthorizationValue() {
   //   const token = getCookie("token");
   const token =
-    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjE5MDk5MiwiZXhwIjoxNjkyMTkyNDMyfQ.etk9_14HrJso9EGwCSWFNKpBsKJpIPviuyWU7ToS4HM";
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIwMzU1NiwiZXhwIjoxNjkyMjA0OTk2fQ.XI8nBmEed7jeNWR3cx5VPV9LH-VGFcm_EybwWe6pJ_A";
   if (token == null) return null;
   return "Bearer " + token;
 }

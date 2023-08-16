@@ -46,28 +46,11 @@ my_btn.forEach((btn) => {
 //     }
 // }
 
-const delBtn = document.querySelectorAll("button.delete");
 
-delBtn.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-
-    const tar = e.currentTarget.nextElementSibling;
-    tar.classList.add("active");
-
-    setOthersInactive(delBtn, e.currentTarget);
-
-    document.addEventListener("click", (e) => {
-      // var eventAdded = true;
-      if (tar.classList.contains("active")) {
-        tar.classList.remove("active");
-      }
-    });
-  });
-});
 
 function setOthersInactive(array, except) {
   array.forEach((el) => {
     if (!(el === except)) el.nextElementSibling.classList.remove("active");
   });
 }
+

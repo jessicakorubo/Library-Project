@@ -1,3 +1,5 @@
+const url = "http://localhost:8080/api/v1";
+
 function fetchData(url, method, token) {
   fetch(url, {
     method,
@@ -17,58 +19,116 @@ function fetchData(url, method, token) {
     .catch((error) => error);
 }
 
+
+
 function viewBooks() {
   fetch("http://localhost:8080/api/v1/books", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: getAuthorizationValue(),
+      "Authorization": getAuthorizationValue(),
     },
   })
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      data.forEach((data) => {
-        var bodyOfBooksTable = document.getElementById("view-books-table-body");
-        bodyOfBooksTable.innerHTML = ` 
-          <tr>
-            <td>${data.isbn}</td>
-            <td>${data.title}</td>
-            <td>${data.authors[0]}</td>
-            <td>${data.availableCopies}</td>
-            <td>${data.totalCopies}</td>
-            <td>
-              <button type="button" class="details">DETAILS</button>
-            </td>
-            <td>
-              <div class="button-div">
-                <button type="button" class="delete">DELETE</button>
-                <div class="popup">
-                  <div class="qtn">
-                    Are you sure you want to delete this book?
-                  </div>
-                  <div class="delete-options">
-                    <a class="cancel" href="">Cancel</a>
-                    <a class="delete" href="#">Delete</a>
-                  </div>
-                </div>
-              </div>
-            </td>
-          </tr>
-        `;
-      });
+      console.log(data)
+      displayBookData(data);
+      const delBtn = document.querySelectorAll("button.delete");
+      deleteBookModal(delBtn, data);
     })
     .catch((error) => error);
 }
 
+function displayBookData(data) {
+  var bodyOfBooksTable = document.getElementById("view-books-table-body");
+  data.forEach((data) => {
+    console.log(data)
+    var tr = document.createElement('tr');
+    tr.innerHTML = ` 
+      <tr>
+        <td>${data.isbn}</td>
+        <td>${data.title}</td>
+        <td>${data.authors[0]}</td>
+        <td>${data.availableCopies}</td>
+        <td>${data.totalCopies}</td>
+        <td>
+          <button type="button" class="details">DETAILS</button>
+        </td>
+        <td>
+          <div class="button-div">
+            <button type="button" class="delete">DELETE</button>
+            <div class="popup">
+              <div class="qtn">
+                Are you sure you want to delete this book?
+              </div>
+              <div class="delete-options" data-id=${data.isbn}>
+                <a class="cancel" href="">Cancel</a>
+                <a class="delete" id="delete-book" href="#">Delete</a>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    `;
+    bodyOfBooksTable.appendChild(tr);
+   
+  });
+}
+
+function deleteBookModal(delBtn, data) {
+  delBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const tar = e.currentTarget.nextElementSibling;
+      tar.classList.add("active");
+      setOthersInactive(delBtn, e.currentTarget);
+      document.addEventListener("click", (e) => {
+        // var eventAdded = true;
+        if (tar.classList.contains("active")) {
+          tar.classList.remove("active");
+        }
+      });
+
+      var deleteButton = document.getElementById('delete-book');
+      deleteButton.addEventListener('click', (e) => {
+        let id = e.target.parentElement.dataset.id;
+        let isDeleteButtonPressed = e.target.id == 'delete-book';
+        if (isDeleteButtonPressed) {
+          fetch(`${url}/books/${id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": 'application/json',
+              "Accept": 'application/json',
+              "Origin": `${url}`,
+              "Authorization": getAuthorizationValue(),
+              // "Authorization": getAuthorizationValue(),
+              // "Access-Control-Allow-Origin":  "http://127.0.0.1:8080",
+              // "Access-Control-Allow-Methods": "DELETE",
+              // "Access-Control-Allow-Headers": "Content-Type, Authorization"
+            },
+          })
+            .then(response => response.json())
+            .then(() => location.reload());
+        }
+      })
+    });
+  });
+ 
+}
+
 var viewBook = $(".view-book-button");
-viewBook.click(viewBooks());
+viewBook.click(
+  viewBooks()
+);
+
+
 
 function getAuthorizationValue() {
   // const token = getCookie("");
   const token =
-    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjE5Mjk2NywiZXhwIjoxNjkyMTk0NDA3fQ.xzwFxIlwgCbFUiGX1GArgRGv9l7XOImiyXHvcd2HOok";
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIwMzU1NiwiZXhwIjoxNjkyMjA0OTk2fQ.XI8nBmEed7jeNWR3cx5VPV9LH-VGFcm_EybwWe6pJ_A";
   if (token == null) return null;
   return "Bearer " + token;
 }
