@@ -127,6 +127,11 @@ table tbody tr button.delete {
   color: white;
   width: 100px;
 }
+table tbody tr td:nth-last-of-type(2),
+table tbody tr td:last-of-type {
+  padding-left: 0.5rem;
+  text-align: center;
+}
 
 div.button-div {
   position: relative;
@@ -441,6 +446,7 @@ div.button-div .popup .delete-options a {
   justify-content: space-between;
   padding-right: 0;
   align-items: center;
+  width: 97.5%;
 }
 .main-section .right-section .view-books-section .view-books-table .table-top .table-content,
 .main-section .right-section .borrowed-section .view-books-table .table-top .table-content,

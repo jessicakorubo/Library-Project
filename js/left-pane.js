@@ -28,17 +28,18 @@ window.customElements.define(
                     >
                     <div class="accordion-body">
                         <div class="accordion-body active">
-                        <a href="view-books.html">View books</a>
-                        </div>
-                        <div class="accordion-body"><a href="">Add a book</a></div>
-                        <div class="accordion-body">
-                        <a href="updateBook.html">Update a book</a>
+                            <a href="view-books.html">View books</a>
                         </div>
                         <div class="accordion-body">
-                        <a href="">Delete a book</a>
+                            <a href="addBook.html">Add a book</a></div>
+                        <div class="accordion-body">
+                            <a href="updateBook.html">Update a book</a>
                         </div>
                         <div class="accordion-body">
-                        <a href="borrowed.html">Borrowed Books</a>
+                            <a href="">Delete a book</a>
+                        </div>
+                        <div class="accordion-body">
+                            <a href="borrowed.html">Borrowed Books</a>
                         </div>
                     </div>
                     </div>

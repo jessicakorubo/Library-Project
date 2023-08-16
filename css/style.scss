@@ -158,6 +158,12 @@ table {
         color: white;
         width: 100px;
       }
+
+      td:nth-last-of-type(2),
+      td:last-of-type {
+        padding-left: 0.5rem;
+        text-align: center;
+      }
     }
   }
 }
@@ -511,6 +517,7 @@ div.button-div {
           justify-content: space-between;
           padding-right: 0;
           align-items: center;
+          width: 97.5%;
 
           .table-content {
             font-size: 20px;
