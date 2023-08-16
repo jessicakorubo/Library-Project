@@ -113,17 +113,17 @@ window.customElements.define(
                         >
                         <div class="accordion-body">
                             <div class="accordion-body">
-                            <a href="#">View Owing Users </a>
+                            <a href="view-owing-users.html">View Owing Users </a>
                             </div>
                         </div>
                         <div class="accordion-body">
                             <div class="accordion-body">
-                            <a href="#">View all Users </a>
+                            <a href="view-all-users.html">View all Users </a>
                             </div>
                         </div>
                         </div>
                     </div>
-                    <div class="accordion-body"><a href="">Add a user</a></div>
+                    <div class="accordion-body"><a href="add-user.html">Add a user</a></div>
                     <div class="accordion-body"><a href="">Delete a user</a></div>
                     </div>
                 </div>
