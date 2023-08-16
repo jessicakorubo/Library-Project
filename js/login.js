@@ -24,7 +24,7 @@ function login() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": getAuthorizationValue(),
+      Authorization: getAuthorizationValue(),
     },
     body: JSON.stringify({ username, password }),
   })
@@ -130,12 +130,11 @@ $("#close").click((e) => {
 //   .catch((error) => console.log(error));
 
 function getAuthorizationValue() {
-  const token = getCookie("token");
+  //   const token = getCookie("token");
+  const token =
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjE4MjcwMSwiZXhwIjoxNjkyMTg0MTQxfQ.iFZ4I266cy04RDDAwVnfJAezRmafRjKYd4Fk2aZd48A";
   if (token == null) return null;
-    return (
-        "Bearer " +
-        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjE4MjcwMSwiZXhwIjoxNjkyMTg0MTQxfQ.iFZ4I266cy04RDDAwVnfJAezRmafRjKYd4Fk2aZd48A"
-  );
+  return "Bearer " + token;
 }
 
 // function setCookie(cname, cvalue, exdays) {
