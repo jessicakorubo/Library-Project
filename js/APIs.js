@@ -19,6 +19,15 @@ function fetchData(url, method, token) {
     .catch((error) => error);
 }
 
+const submitBook = document.getElementById('submit');
+
+
+// submitBook.addEventListener('click', () => {
+//   console.log('book added!');
+// })
+
+
+
 function viewBooks() {
   fetch("http://localhost:8080/api/v1/books", {
     method: "GET",
@@ -82,43 +91,43 @@ function deleteBookModal(delBtn, data) {
       tar.classList.add("active");
       setOthersInactive(delBtn, e.currentTarget);
       document.addEventListener("click", (e) => {
-        // var eventAdded = true;
-        if (tar.classList.contains("active")) {
-          tar.classList.remove("active");
-        }
-      });
-
-      var deleteButton = document.getElementById("delete-book");
-      deleteButton.addEventListener("click", (e) => {
-        let id = e.target.parentElement.dataset.id;
-        let isDeleteButtonPressed = e.target.id == "delete-book";
+        var id = e.target.parentElement.children[1].dataset.id;
+        console.log(id);
+        let isDeleteButtonPressed = id == "delete";
         if (isDeleteButtonPressed) {
           fetch(`${url}/books/${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
-              Authorization: getAuthorizationValue(),
-              // "Authorization": getAuthorizationValue(),
-              // "Access-Control-Allow-Origin":  "http://127.0.0.1:8080",
-              // "Access-Control-Allow-Methods": "DELETE",
-              // "Access-Control-Allow-Headers": "Content-Type, Authorization"
+              "Authorization": getAuthorizationValue()
             },
           })
             .then((response) => response.json())
             .then(() => location.reload());
         }
+        // // var eventAdded = true;
+        if (tar.classList.contains("active")) {
+          tar.classList.remove("active");
+        }
       });
+
+
+      // let id = e.target.parentElement.dataset.id;
+      
     });
+
+    
   });
 }
 
 var viewBook = $(".view-book-button");
+console.log(viewBook);
 viewBook.click(viewBooks());
 
 function getAuthorizationValue() {
   // const token = getCookie("");
   const token =
-    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIwMzU1NiwiZXhwIjoxNjkyMjA0OTk2fQ.XI8nBmEed7jeNWR3cx5VPV9LH-VGFcm_EybwWe6pJ_A";
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIxMzYxOSwiZXhwIjoxNjkyMjE1MDU5fQ.SYojIdLig9fpxgjFwcn-Las_4ywlGXLkt3NKP_hcVhI";
   if (token == null) return null;
   return "Bearer " + token;
 }
