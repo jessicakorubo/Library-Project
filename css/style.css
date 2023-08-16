@@ -21,7 +21,6 @@ select:-webkit-autofill:focus {
   border: 1px solid green;
   -webkit-text-fill-color: white;
   -webkit-box-shadow: none;
-  -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -35,13 +34,7 @@ select:-webkit-autofill:focus {
   border: 1px solid white;
   border-radius: 6px;
   padding: 0.5rem 1rem;
-  background: linear-gradient(
-    184deg,
-    rgb(80, 58, 36) 17%,
-    rgb(163, 112, 75) 50%,
-    rgb(156, 110, 75) 75%,
-    #c7935d 86%
-  );
+  background: linear-gradient(184deg, rgb(80, 58, 36) 17%, rgb(163, 112, 75) 50%, rgb(156, 110, 75) 75%, #c7935d 86%);
 }
 .entry .form .input-label .input-container input {
   width: 90%;
@@ -52,10 +45,6 @@ select:-webkit-autofill:focus {
 }
 .entry .form .input-label .input-container input :focus .input-container {
   border: 1px dotted white;
-}
-.entry .form .input-label .input-container input::-moz-placeholder {
-  color: white;
-  opacity: 0.5;
 }
 .entry .form .input-label .input-container input::placeholder {
   color: white;
@@ -72,10 +61,7 @@ select:-webkit-autofill:focus {
   border: none;
   border-radius: 10px;
   font-weight: 900px;
-  transition:
-    border 0.5s,
-    background-color 0.5s,
-    color 0.5s;
+  transition: border 0.5s, background-color 0.5s, color 0.5s;
 }
 .entry .submit-container .reset:hover,
 .entry .submit-container .submit:hover {
@@ -96,12 +82,13 @@ a.add-link {
   text-decoration: none;
   color: white;
   padding: 0.8rem;
-  background-color: #12e080;
+  background: linear-gradient(184deg, rgb(80, 58, 36) 17%, rgb(163, 112, 75) 50%, rgb(156, 110, 75) 75%, #c7935d 86%);
   border-radius: 10px;
 }
 
 table {
   width: 100%;
+  overflow-x: auto;
 }
 table thead {
   color: #b4674d;
@@ -130,12 +117,49 @@ table tbody tr button.returned {
 }
 table tbody tr button.details {
   background-color: #f1e4e0;
-  width: -moz-fit-content;
   width: fit-content;
+}
+table tbody tr button.delete {
+  background-color: rgb(248, 79, 79);
+  color: white;
+  width: 100px;
+}
+
+div.button-div {
+  position: relative;
+}
+div.button-div .popup {
+  position: absolute;
+  top: calc(100% + 30px);
+  left: -100%;
+  z-index: 1;
+  display: none;
+  background: linear-gradient(184deg, rgb(80, 58, 36) 17%, rgb(163, 112, 75) 50%, rgb(156, 110, 75) 75%, #c7935d 86%);
+  width: 200px;
+  border-radius: 10px;
+  height: 120px;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+div.button-div .popup.active {
+  display: block;
+}
+div.button-div .popup .delete-options {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+div.button-div .popup .delete-options a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 0 0.5rem;
+  border-radius: 5px;
 }
 
 .welcome-page {
-  background-image: url("images/pickawood-8SfXsep8EIA-unsplash.jpg");
+  background-image: url("../resources/images/pickawood-8SfXsep8EIA-unsplash.jpg");
   height: 100%;
   width: 100%;
   position: relative;
@@ -188,7 +212,7 @@ table tbody tr button.details {
   color: white;
   pointer-events: all;
   text-decoration: none;
-  background-image: url("images/welcome-background.jpg");
+  background-image: url("../resources/images/welcome-background.jpg");
   color: #b4674d;
   font-weight: 900;
   padding: 1rem 3rem;
@@ -232,6 +256,8 @@ table tbody tr button.details {
 }
 .header .header-content {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0px 5px 10px 0px rgba(238, 250, 126, 0.1);
   background: black;
   color: white;
@@ -239,14 +265,14 @@ table tbody tr button.details {
 }
 .header .header-content .events {
   width: 300px;
+  height: 100%;
   display: flex;
   text-align: center;
   box-shadow: 0px -5px 10px 4px rgba(234, 238, 214, 0.5);
   justify-content: center;
   align-items: center;
-  transition:
-    transform 0.5s,
-    box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s;
+  cursor: pointer;
 }
 .header .header-content .events:hover {
   transform: translateY(-3px);
@@ -258,9 +284,6 @@ table tbody tr button.details {
   color: white;
 }
 .header .header-content .admin {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   text-align: right;
   width: 100%;
   margin-right: 1rem;
@@ -290,6 +313,7 @@ table tbody tr button.details {
   position: fixed;
   width: 300px;
   height: calc(100vh - 70px);
+  overflow-y: scroll;
   background-color: white;
   box-shadow: inset -5px 5px 10px 0px rgba(7, 7, 7, 0.1);
 }
@@ -335,7 +359,8 @@ table tbody tr button.details {
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230a58ca'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-focus-border-color: none !important;
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem
+    rgba(13, 110, 253, 0.25);
   --bs-accordion-body-padding-x: 1.25rem;
   --bs-accordion-body-padding-y: 1rem;
   --bs-accordion-active-color: none !important;
@@ -353,14 +378,13 @@ table tbody tr button.details {
 .main-section .right-section {
   width: calc(100% - 300px);
   position: relative;
-  height: -moz-fit-content;
   height: fit-content;
   top: 0;
   left: 300px;
 }
 .main-section .right-section > div {
   min-height: 100vh;
-  box-shadow: inset 15px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 10px 20px 10px rgba(0, 0, 0, 0.2);
 }
 .main-section .right-section .add-user .form-container {
   background: linear-gradient(to right, rgb(130, 89, 241), rgb(253, 89, 60));
@@ -383,21 +407,10 @@ table tbody tr button.details {
 .main-section .right-section .add-user .form-container .right-form {
   width: 75%;
 }
-.main-section
-  .right-section
-  .add-user
-  .form-container
-  .right-form
-  .form-header {
+.main-section .right-section .add-user .form-container .right-form .form-header {
   margin-bottom: 20px;
 }
-.main-section
-  .right-section
-  .add-user
-  .form-container
-  .right-form
-  .form-header
-  h2 {
+.main-section .right-section .add-user .form-container .right-form .form-header h2 {
   font-size: 20px;
 }
 .main-section .right-section .view-books-section,
@@ -423,67 +436,25 @@ table tbody tr button.details {
   display: flex;
   padding: 2rem;
   justify-content: space-between;
+  padding-right: 0;
   align-items: center;
+  width: calc(100vw - 400px);
 }
-.main-section
-  .right-section
-  .view-books-section
-  .view-books-table
-  .table-top
-  .table-content,
-.main-section
-  .right-section
-  .borrowed-section
-  .view-books-table
-  .table-top
-  .table-content,
-.main-section
-  .right-section
-  .add-user
-  .view-books-table
-  .table-top
-  .table-content {
+.main-section .right-section .view-books-section .view-books-table .table-top .table-content,
+.main-section .right-section .borrowed-section .view-books-table .table-top .table-content,
+.main-section .right-section .add-user .view-books-table .table-top .table-content {
   font-size: 20px;
 }
-.main-section
-  .right-section
-  .view-books-section
-  .view-books-table
-  .table-top
-  .book-new,
-.main-section
-  .right-section
-  .borrowed-section
-  .view-books-table
-  .table-top
-  .book-new,
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new,
+.main-section .right-section .borrowed-section .view-books-table .table-top .book-new,
 .main-section .right-section .add-user .view-books-table .table-top .book-new {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.main-section
-  .right-section
-  .view-books-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books,
-.main-section
-  .right-section
-  .borrowed-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books,
-.main-section
-  .right-section
-  .add-user
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books {
-  width: 450px;
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books,
+.main-section .right-section .borrowed-section .view-books-table .table-top .book-new .search-books,
+.main-section .right-section .add-user .view-books-table .table-top .book-new .search-books {
   border: 1px solid black;
   background-color: white;
   display: flex;
@@ -494,90 +465,34 @@ table tbody tr button.details {
   align-items: center;
   border-radius: 10px;
 }
-.main-section
-  .right-section
-  .view-books-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  i,
-.main-section
-  .right-section
-  .borrowed-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  i,
-.main-section
-  .right-section
-  .add-user
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  i {
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books i,
+.main-section .right-section .borrowed-section .view-books-table .table-top .book-new .search-books i,
+.main-section .right-section .add-user .view-books-table .table-top .book-new .search-books i {
   color: black;
 }
-.main-section
-  .right-section
-  .view-books-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  input,
-.main-section
-  .right-section
-  .borrowed-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  input,
-.main-section
-  .right-section
-  .add-user
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  input {
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books input,
+.main-section .right-section .borrowed-section .view-books-table .table-top .book-new .search-books input,
+.main-section .right-section .add-user .view-books-table .table-top .book-new .search-books input {
   width: 90%;
   padding: 0.5rem;
   border: none;
   outline: none;
   background-color: transparent;
 }
-.main-section
-  .right-section
-  .view-books-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  input:focus,
-.main-section
-  .right-section
-  .borrowed-section
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  input:focus,
-.main-section
-  .right-section
-  .add-user
-  .view-books-table
-  .table-top
-  .book-new
-  .search-books
-  input:focus {
+.main-section .right-section .view-books-section .view-books-table .table-top .book-new .search-books input:focus,
+.main-section .right-section .borrowed-section .view-books-table .table-top .book-new .search-books input:focus,
+.main-section .right-section .add-user .view-books-table .table-top .book-new .search-books input:focus {
   border: none;
   outline: none;
-} /*# sourceMappingURL=style.css.map */
-
-.noc {
-  width: 29%;
 }
+
+@media screen and (max-width: 750px) {
+  .dashboard {
+    display: none;
+  }
+  .main-section .right-section {
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

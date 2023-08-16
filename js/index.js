@@ -1,166 +1,73 @@
-const form = $("#login-form");
+const table_btn = document.querySelectorAll("button.table-btn");
 
-let token = "";
+var my_btn = [].slice.call(table_btn);
 
-function login() {
-  const username = $("#username").val();
-  const password = $("#password").val();
-
-  if (!$("#username")[0].checkValidity()) {
-    $("#username")[0].reportValidity();
-    return;
+console.log("this is", my_btn, "inactive");
+my_btn.forEach((btn) => {
+  if (btn.classList.contains("pending")) {
+    btn.innerHTML = "PENDING...";
+  } else if (btn.classList.contains("returned")) {
+    btn.innerHTML = "RETURNED";
   }
-  if (!$("#password")[0].checkValidity()) {
-    $("#password")[0].reportValidity();
-    return;
-  }
+});
 
-  fetch("http://localhost:8080/api/v1/auth/authenticate", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // Authorization: getAuthorizationValue(),
-    },
-    body: JSON.stringify({ username, password }),
-  })
-    .then((response) => {
-      responseClone = response.clone();
+// delBtn.forEach(btn => {
 
-      if (response.status === 200) {
-        console.log("Login successful!");
-      } else if (response.status === 401) {
-        console.log("Login failed!");
+//     btn.addEventListener('click', (e)=> {
+
+//         var tar = e.target.nextElementSibling;
+//         console.log(tar);
+//         tar.classList.add('active');
+//         e.stopPropagation();
+
+//         document.addEventListener('click', ()=> {
+//             tar.classList.remove('active');
+//         })
+
+//     })
+
+// });
+
+// var buttonDiv = document.querySelectorAll(".button-div");
+
+// buttonDiv.forEach(mybtn => {
+//     var mydel = mybtn.querySelector('.delete');
+//     var mypopup = mybtn.querySelector('.popup');
+
+//     mydel.addEventListener('click', (e)=> {
+//         e.stopPropagation;
+//         mypopup.classList.toggle('active');
+//         console.info('You have clicked on the delete button')
+//     })
+
+//     window.onclick = function(){
+//     if (mypopup.style.display = "block") {
+//         mypopup.style.display = 'none';
+//     }
+// }
+
+const delBtn = document.querySelectorAll("button.delete");
+
+delBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const tar = e.currentTarget.nextElementSibling;
+    tar.classList.add("active");
+
+    setOthersInactive(delBtn, e.currentTarget);
+
+    document.addEventListener("click", (e) => {
+      // var eventAdded = true;
+      if (tar.classList.contains("active")) {
+        tar.classList.remove("active");
       }
-
-      return response.json();
-    })
-    .then((data) => {
-      if (data.token != null) window.location.replace("dashboard.html");
-      else {
-        console.log(data.errorMessage);
-        {
-          $("#error-message").addClass("active");
-          $(document).keypress((e) => {
-            $("#close").click();
-            $(document).unbind(e);
-          });
-        }
-        // window.location.reload();
-      }
-
-      console.log(data);
-    })
-    .catch((rejectionReason) => {
-      console.log(
-        "Error parsing JSON from response:",
-        rejectionReason,
-        responseClone
-      );
-      responseClone.text().then((bodyText) => {
-        console.log("Received the following instead of valid JSON:", bodyText);
-      });
     });
-}
-
-var button = $("button:submit");
-button.click(login);
-
-$(document).keypress((e) => {
-  let key;
-  if (window.e) {
-    key = e.charCode;
-  } else key = e.which;
-
-  if (key === 13) button.click();
+  });
 });
 
-$("#close").click((e) => {
-  e.currentTarget.parentElement.classList.remove("active");
-  $("#password").val("");
-  $("#username").val("").focus();
-});
-
-// form.onsubmit = (e) => {
-//   e.preventDefault();
-//   const formData = new FormData(form);
-
-//   const data = Object.fromEntries(formData);
-//   const jsonData = JSON.stringify(data);
-
-//   console.log(jsonData);
-
-//   formData.append("loginData", jsonData);
-
-//   return false;
-// };
-
-// fetch("http://localhost:8080/api/v1/authors")
-//   .then((response) => response.json())
-//   .then((data) => console.log(data))
-//   .catch((error) => console.log(error));
-
-// fetch("http://localhost:8080/api/v1/auth/authenticate", {
-//   method: "POST",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({ username: "admin", password: "secret" }),
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data.token);
-//   })
-//   .catch((error) => console.log(error));
-
-// fetch("http://localhost:8080/api/v1/books", {
-//   method: "GET",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Authorization:
-//       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjE0ODQzNCwiZXhwIjoxNjkyMTQ5ODc0fQ.-ZB-imN519SaLpzHPYexSF9Yao925k-bGiBNaj_7kG4",
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((error) => console.log(error));
-
-function getAuthorizationValue() {
-  const token = getCookie("token");
-  if (token == null) return null;
-  return "Bearer " + token;
-}
-
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  let user = getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
-  } else {
-    user = prompt("Please enter your name:", "");
-    if (user != "" && user != null) {
-      setCookie("username", user, 365);
-    }
-  }
+function setOthersInactive(array, except) {
+  array.forEach((el) => {
+    if (!(el === except)) el.nextElementSibling.classList.remove("active");
+  });
 }

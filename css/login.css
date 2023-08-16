@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   background-size: cover;
-  background-image: url("./resource/images/backgroundImages.jpg");
+  background-image: url("../resources/images/backgroundImages.jpg");
   /* background-color: #000000; */
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -78,7 +84,7 @@ div.button-div .popup.active {
   border: 1px solid #f1f1f1;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  /* height: 400px; */
 
   /* background-color: white; */
   /* display: flex;
@@ -127,8 +133,8 @@ button:hover {
 }
 
 .cancelbtn {
+  margin: 0;
   width: 20%;
-  margin-top: 3.2%;
 }
 
 .remember-me {
@@ -157,6 +163,9 @@ span.psw {
 }
 
 .forgotpw-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-top: 66px;
   height: 16%;
 }
