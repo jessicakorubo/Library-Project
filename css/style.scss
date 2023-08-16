@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  overflow-y: scroll;
+}
 body {
   width: 100vw;
   height: 100vh;
@@ -361,7 +364,7 @@ div.button-div {
     position: fixed;
     width: 300px;
     height: calc(100vh - 70px);
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: $secondary-color;
     box-shadow: inset -5px 5px 10px 0px rgba(7, 7, 7, 0.1);
     // padding: 10px 30px;
@@ -434,7 +437,7 @@ div.button-div {
     }
   }
   .right-section {
-    width: calc(100% - 300px);
+    width: calc(100vw - 300px);
     position: relative;
     height: fit-content;
     top: 0;
