@@ -24,7 +24,7 @@ window.customElements.define(
                   </div>
                 </div>
               </a>
-              </div>
+            </div>
         </div>
           `;
     }
