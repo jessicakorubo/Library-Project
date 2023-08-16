@@ -3,14 +3,14 @@ function fetchData(url, method, token) {
     method,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
     // body,
   })
     .then((response) => {
       return response.json();
     })
-    .then((data) => { 
+    .then((data) => {
       console.log(data);
       // return data
     })
@@ -18,26 +18,26 @@ function fetchData(url, method, token) {
 }
 
 function viewBooks() {
-  fetch('http://localhost:8080/api/v1/books', {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": getAuthorizationValue(),
-      }
+  fetch("http://localhost:8080/api/v1/books", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: getAuthorizationValue(),
+    },
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .then(data => {
-    data.forEach(data => {
-      var bodyOfBooksTable = document.getElementById('view-books-table-body');
-      bodyOfBooksTable.innerHTML = 
-        ` <tr>
-            <td>${data.title}</td>
+    .then((data) => {
+      data.forEach((data) => {
+        var bodyOfBooksTable = document.getElementById("view-books-table-body");
+        bodyOfBooksTable.innerHTML = ` 
+          <tr>
             <td>${data.isbn}</td>
-            <td>${data.author}</td>
-            <td>${data.totalCopies}</td>
+            <td>${data.title}</td>
+            <td>${data.authors[0]}</td>
             <td>${data.availableCopies}</td>
+            <td>${data.totalCopies}</td>
             <td>
               <button type="button" class="details">DETAILS</button>
             </td>
@@ -56,22 +56,19 @@ function viewBooks() {
               </div>
             </td>
           </tr>
-        `
-    });
+        `;
+      });
     })
     .catch((error) => error);
 }
 
-var viewBook = $('.view-book-button');
-viewBook.click(
-  viewBooks()
-);
-
-
+var viewBook = $(".view-book-button");
+viewBook.click(viewBooks());
 
 function getAuthorizationValue() {
   // const token = getCookie("");
-  const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjE5MDk5MiwiZXhwIjoxNjkyMTkyNDMyfQ.etk9_14HrJso9EGwCSWFNKpBsKJpIPviuyWU7ToS4HM'
+  const token =
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjE5Mjk2NywiZXhwIjoxNjkyMTk0NDA3fQ.xzwFxIlwgCbFUiGX1GArgRGv9l7XOImiyXHvcd2HOok";
   if (token == null) return null;
   return "Bearer " + token;
 }
