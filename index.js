@@ -73,5 +73,13 @@ var buttonDiv = document.querySelectorAll('.button-div');
 // }
   
 
+// Put all the popups in an array, then loop through the array and if any of the popups is set 
+// to active, remove it from active when you click on a button
 
-  
+// var popups = document.querySelectorAll('.popup');
+
+// var popArray =  [].slice.call(popups);
+
+// for (i=0; i<popArray.length; i++){
+//     console.log(i, 'element in the array');
+// }
