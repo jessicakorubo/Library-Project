@@ -313,7 +313,7 @@ div.button-div .popup .delete-options a {
   position: fixed;
   width: 300px;
   height: calc(100vh - 70px);
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: white;
   box-shadow: inset -5px 5px 10px 0px rgba(7, 7, 7, 0.1);
 }
@@ -376,7 +376,7 @@ div.button-div .popup .delete-options a {
   padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
 }
 .main-section .right-section {
-  width: calc(100% - 300px);
+  width: calc(100vw - 300px);
   position: relative;
   height: fit-content;
   top: 0;
