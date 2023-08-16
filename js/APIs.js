@@ -19,21 +19,19 @@ function fetchData(url, method, token) {
     .catch((error) => error);
 }
 
-
-
 function viewBooks() {
   fetch("http://localhost:8080/api/v1/books", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": getAuthorizationValue(),
+      Authorization: getAuthorizationValue(),
     },
   })
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data)
+      console.log(data);
       displayBookData(data);
       const delBtn = document.querySelectorAll("button.delete");
       deleteBookModal(delBtn, data);
@@ -44,8 +42,8 @@ function viewBooks() {
 function displayBookData(data) {
   var bodyOfBooksTable = document.getElementById("view-books-table-body");
   data.forEach((data) => {
-    console.log(data)
-    var tr = document.createElement('tr');
+    console.log(data);
+    var tr = document.createElement("tr");
     tr.innerHTML = ` 
       <tr>
         <td>${data.isbn}</td>
@@ -65,7 +63,7 @@ function displayBookData(data) {
               </div>
               <div class="delete-options" data-id=${data.isbn}>
                 <a class="cancel" href="">Cancel</a>
-                <a class="delete" id="delete-book" href="#">Delete</a>
+                <a class="delete" id="delete-book" href="">Delete</a>
               </div>
             </div>
           </div>
@@ -73,7 +71,6 @@ function displayBookData(data) {
       </tr>
     `;
     bodyOfBooksTable.appendChild(tr);
-   
   });
 }
 
@@ -91,39 +88,32 @@ function deleteBookModal(delBtn, data) {
         }
       });
 
-      var deleteButton = document.getElementById('delete-book');
-      deleteButton.addEventListener('click', (e) => {
+      var deleteButton = document.getElementById("delete-book");
+      deleteButton.addEventListener("click", (e) => {
         let id = e.target.parentElement.dataset.id;
-        let isDeleteButtonPressed = e.target.id == 'delete-book';
+        let isDeleteButtonPressed = e.target.id == "delete-book";
         if (isDeleteButtonPressed) {
           fetch(`${url}/books/${id}`, {
             method: "DELETE",
             headers: {
-              "Content-Type": 'application/json',
-              "Accept": 'application/json',
-              "Origin": `${url}`,
-              "Authorization": getAuthorizationValue(),
+              "Content-Type": "application/json",
+              Authorization: getAuthorizationValue(),
               // "Authorization": getAuthorizationValue(),
               // "Access-Control-Allow-Origin":  "http://127.0.0.1:8080",
               // "Access-Control-Allow-Methods": "DELETE",
               // "Access-Control-Allow-Headers": "Content-Type, Authorization"
             },
           })
-            .then(response => response.json())
+            .then((response) => response.json())
             .then(() => location.reload());
         }
-      })
+      });
     });
   });
- 
 }
 
 var viewBook = $(".view-book-button");
-viewBook.click(
-  viewBooks()
-);
-
-
+viewBook.click(viewBooks());
 
 function getAuthorizationValue() {
   // const token = getCookie("");
