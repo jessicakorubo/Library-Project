@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="welcome-page">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="welcome-page"></div>
+    <div class="content">
+      <p>
+        This is a library management system, designed and edited by MAUBEN'S
+        Technological team. This library system should be used for the sole
+        purpose of opertating library related tasks. Only the admins are allowed
+        to check into this panel. This panel contains the amount of books in the
+        library and personal information about the library, Any unathorized
+        access will be halted and a penalty charge might be taken up. To
+        continue to this page, agree to the terms and conditions.
+      </p>
+      <div id="conditions">
+        <input type="checkbox" name="terms" id="terms" />
+        <p>I have read and agree to terms and conditions of this software</p>
+      </div>
+      <a id="login-link" href="login.html">Enter the library</a>
     </div>
-        <div class="content">
-            <p>This is a library management system, designed and edited by MAUBEN'S Technological team. This library system
-                should be used for the sole purpose of opertating library related tasks. Only the admins are allowed to check
-                into this panel. This panel contains the amount of books in the library and personal information about the library,
-                Any unathorized access will be halted and a penalty charge might be taken up. To continue to this page, agree to the terms and conditions.
-            </p>
-            <div id="conditions">
-                <input type="checkbox" name="terms" id="terms">
-                <p>I have read and agree to terms and conditions of this software</p>
-            </div>
-           <a href="dashboard.html">Enter the library</a>
-        </div>
-         
-</body>
+  </body>
+  <script src="js/index.js"></script>
 </html>

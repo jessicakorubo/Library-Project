@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="css/login.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.4.js"
       integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
@@ -14,44 +14,52 @@
   <body>
     <div class="overlay"></div>
 
+    <div id="error-message">
+      <span id="error-content">Bad credentials!</span>
+      <span id="close">X</span>
+    </div>
+
     <div class="form-container">
       <h2>Welcome Librarian</h2>
-      <form action="/action_page.php" method="post" class="loginPage">
+      <div class="loginPage" id="login-form">
         <div class="imgcontainer">
-          <img src="resource/images/avatar.jpg" alt="Avatar" class="avatar" />
+          <img src="resources/images/avatar.jpg" alt="Avatar" class="avatar" />
         </div>
 
         <div class="field-container">
-          <label for="uname"><b>Username</b></label>
+          <label for="username"><b>Username</b></label>
           <input
+            id="username"
             type="text"
             placeholder="Enter Username"
-            name="uname"
+            name="username"
             required
+            autofocus
           />
 
-          <label for="psw"><b>Password</b></label>
+          <label for="password"><b>Password</b></label>
           <input
+            id="password"
             type="password"
             placeholder="Enter Password"
-            name="psw"
+            name="password"
             required
           />
 
-          <button type="submit" formaction="index.html">Login</button>
-          <label class="rememberMe">
+          <button type="submit">Login</button>
+          <div class="remember-me-entry">
             <input type="checkbox" checked="checked" name="remember" />
-            Remember me
-          </label>
+            <label class="remember-me"> Remember me </label>
+          </div>
         </div>
 
         <div class="forgotpw-container" style="background-color: #f1f1f1">
           <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+          <span class="psw"><a href="#">Forgot Password?</a></span>
         </div>
-      </form>
+      </div>
     </div>
 
-    <script src="js/index.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>

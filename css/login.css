@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   background-size: cover;
-  background-image: url("./resource/images/backgroundImages.jpg");
+  background-image: url("../resources/images/backgroundImages.jpg");
   /* background-color: #000000; */
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -23,6 +29,49 @@ body {
   z-index: -1;
 }
 
+#error-message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10%;
+  width: 40%;
+  background-color: #ffd9b7;
+  border-radius: 10px;
+}
+
+#error-message.active {
+  display: flex;
+}
+
+#error-content {
+  color: #cd1818;
+  font-size: 24px;
+}
+
+div.button-div .popup.active {
+  display: block;
+}
+
+#close {
+  position: absolute;
+  right: 6%;
+  padding: 1% 3%;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #d14d72;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+#close:hover {
+  background-color: #db005b;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -31,11 +80,11 @@ body {
   height: 100%;
 }
 
-form {
+#login-form {
   border: 1px solid #f1f1f1;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  /* height: 400px; */
 
   /* background-color: white; */
   /* display: flex;
@@ -84,11 +133,11 @@ button:hover {
 }
 
 .cancelbtn {
+  margin: 0;
   width: 20%;
-  margin-top: 3.2%;
 }
 
-.rememberMe {
+.remember-me {
   color: aliceblue;
 }
 
@@ -114,6 +163,9 @@ span.psw {
 }
 
 .forgotpw-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-top: 66px;
   height: 16%;
 }

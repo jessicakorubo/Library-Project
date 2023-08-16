@@ -135,7 +135,7 @@ table tbody tr button.details {
 }
 
 .welcome-page {
-  background-image: url("images/pickawood-8SfXsep8EIA-unsplash.jpg");
+  background-image: url("../resources/images/pickawood-8SfXsep8EIA-unsplash.jpg");
   height: 100%;
   width: 100%;
   position: relative;
@@ -188,7 +188,7 @@ table tbody tr button.details {
   color: white;
   pointer-events: all;
   text-decoration: none;
-  background-image: url("images/welcome-background.jpg");
+  background-image: url("../resources/images/welcome-background.jpg");
   color: #b4674d;
   font-weight: 900;
   padding: 1rem 3rem;
