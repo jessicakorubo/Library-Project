@@ -24,7 +24,7 @@ function login() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": getAuthorizationValue(),
+      // Authorization: getAuthorizationValue(),
     },
     body: JSON.stringify({ username, password }),
   })
@@ -132,7 +132,11 @@ $("#close").click((e) => {
 function getAuthorizationValue() {
   //   const token = getCookie("token");
   const token =
+<<<<<<< Updated upstream
     "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjQ5MDAwMiwiZXhwIjoxNjkyNDkxNDQyfQ.0o8XF5ewU3MC0JaedX1ze3PXvPs46mJRPO_zh8EjIxQ";
+=======
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIxNTY2MywiZXhwIjoxNjk3Mzk5NjYzfQ.yI4Xbx0uVhTTWHHfoT7vZbdPzbilJTzuJXZAdVe_hZ8";
+>>>>>>> Stashed changes
   if (token == null) return null;
   return "Bearer " + token;
 }

@@ -19,14 +19,11 @@ function fetchData(url, method, token) {
     .catch((error) => error);
 }
 
-const submitBook = document.getElementById('submit');
-
+const submitBook = document.getElementById("submit");
 
 // submitBook.addEventListener('click', () => {
 //   console.log('book added!');
 // })
-
-
 
 function viewBooks() {
   fetch("http://localhost:8080/api/v1/books", {
@@ -91,25 +88,46 @@ function deleteBookModal(delBtn, data) {
       tar.classList.add("active");
       setOthersInactive(delBtn, e.currentTarget);
       document.addEventListener("click", (e) => {
-        var id = e.target.parentElement.children[1].dataset.id;
-        console.log(id);
-        let isDeleteButtonPressed = id == "delete";
-        if (isDeleteButtonPressed) {
-          fetch(`${url}/books/${id}`, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": getAuthorizationValue()
-            },
-          })
-            .then((response) => response.json())
-            .then(() => location.reload());
-        }
         // // var eventAdded = true;
         if (tar.classList.contains("active")) {
           tar.classList.remove("active");
         }
       });
+<<<<<<< Updated upstream
+=======
+
+      const popupDelete = tar.children[1].children[1];
+      popupDelete.addEventListener("click", (e) => {
+        e.preventDefault();
+        var id = e.target.parentElement.dataset.id;
+        fetch(`${url}/books/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: getAuthorizationValue(),
+          },
+        })
+          .then((response) => response.json())
+          .then(() => {
+            // location.reload();
+          });
+      });
+
+      // console.log(id);
+      // let isDeleteButtonPressed = id == "delete";
+      // if (isDeleteButtonPressed) {
+      //   fetch(`${url}/books/${id}`, {
+      //     method: "DELETE",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Authorization: getAuthorizationValue(),
+      //     },
+      //   })
+      //     .then((response) => response.json())
+      //     .then(() => location.reload());
+      // }
+
+>>>>>>> Stashed changes
       // let id = e.target.parentElement.dataset.id;
     });
   });
@@ -122,7 +140,11 @@ viewBook.click(viewBooks());
 function getAuthorizationValue() {
   // const token = getCookie("");
   const token =
+<<<<<<< Updated upstream
     "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjQ5MDAwMiwiZXhwIjoxNjkyNDkxNDQyfQ.0o8XF5ewU3MC0JaedX1ze3PXvPs46mJRPO_zh8EjIxQ";
+=======
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIxNTY2MywiZXhwIjoxNjk3Mzk5NjYzfQ.yI4Xbx0uVhTTWHHfoT7vZbdPzbilJTzuJXZAdVe_hZ8";
+>>>>>>> Stashed changes
   if (token == null) return null;
   return "Bearer " + token;
 }
