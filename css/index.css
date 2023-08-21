@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body{
+    margin: 0;
+    background-color: #F9FAFC;
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav{
+    width: 97%;
+    justify-content: flex-start;
+    color: #C2C7CD;
+    display: flex;
+    margin: 0 20px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-right: 4%;
+    border-right: 2px solid #C2C7CD;
+}
+
+.notifications{
+    margin-right: 50px;
+}
+
+.account-menu{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.account{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.account-avatar img{
+    object-fit: contain;
+    border-radius: 50%;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.new-book{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.new-book button{
+    color: black;
+    border-radius: 100px;
+    border: 2px solid #C2C7CD;
+    width: 90%;
+    outline: none;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.new-book button:hover{
+    background-color: #FEEDB5;
+}
+
+.border-bottom{
+    height: 1px;
+    background-color: #C2C7CD;
+    width: 100%;
+}
+
+
+.body-content{
+    display: flex;
+    height: 90vh;
+}
+
+.sidebar-nav{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    align-items: center;
+    border-right: 1px solid #C2C7CD;
+}
+
+.sidebar-nav .logo{
+    height: 10%;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: flex-start;
+    width: 70%;
+}
+
+.sidebar-nav .logo img{
+    object-fit: contain;
+    height: 60%;
+}
+
+.sidebar-menu-options{
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    border-bottom: 1px solid #C2C7CD;
+}
+
+.sidebar-menu-options > a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 10px;
+}
+
+.sidebar-menu-options > a > img{
+    object-fit: contain;
+    width: 30px;
+}
+
+.sidebar-menu-options > a p{
+    margin: 0;
+    margin-left: 20px;
+}
+
+.sidebar-menu-options > a:hover{
+    background-color: #FEEDB5;
+    cursor: pointer;
+}
+
+.sidebar-menu-options .active{
+    background-color: #FEEDB5;
+}
+
+
+
+.sidebar-footer{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.copyright{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow:  2px 2px 10px #bebebe, -2px -2px 10px #ffffff;
+    height: 50%;
+    padding-left: 20px;
+}
+
+.copyright img{
+    object-fit: contain;
+    height: 30%;
+    margin-right: 10px;
+}
+
+.middle-container{
+    width: 60%;
+    padding: 3% 5%;
+}
+
+.admin-salutation{
+    height: 150px;
+    width: 88%;
+    background-color: #FEEDB5;
+    border-radius: 20px;
+    padding: 2% 5%;
+    position: relative;
+    color: white;
+}
+
+
+.admin-salutation > *:not(.admin-salutation-cover){
+    position: relative;
+    z-index: 1;
+}
+
+.admin-salutation-cover{
+    position: absolute;
+    background-image: url(/resources/images/1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+}
+
+.admin-salutation h2{
+    margin-bottom: 40px;
+}
+
+.admin-salutation a{
+    text-decoration: none;
+    background-color: rgb(70, 56, 56);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    width: 10%;
+    display: block;
+    text-align: center;
+}
+
+.admin-salutation a:hover{
+    background-color: #bebebe;
+    cursor: pointer;
+}
+
+.right-pane{
+    width: 20%;
+}

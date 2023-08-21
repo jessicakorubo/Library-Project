@@ -11,6 +11,16 @@ my_btn.forEach((btn) => {
   }
 });
 
+
+
+$('.sidebar-menu-options').children().each((index, option) => {
+  $(option).click(() => {
+    $(option).addClass('active');
+    $(option).siblings().removeClass('active');
+ })
+});
+
+
 // delBtn.forEach(btn => {
 
 //     btn.addEventListener('click', (e)=> {

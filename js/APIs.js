@@ -110,13 +110,8 @@ function deleteBookModal(delBtn, data) {
           tar.classList.remove("active");
         }
       });
-
-
       // let id = e.target.parentElement.dataset.id;
-      
     });
-
-    
   });
 }
 
@@ -127,7 +122,7 @@ viewBook.click(viewBooks());
 function getAuthorizationValue() {
   // const token = getCookie("");
   const token =
-    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIxMzYxOSwiZXhwIjoxNjkyMjE1MDU5fQ.SYojIdLig9fpxgjFwcn-Las_4ywlGXLkt3NKP_hcVhI";
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjQ5MDAwMiwiZXhwIjoxNjkyNDkxNDQyfQ.0o8XF5ewU3MC0JaedX1ze3PXvPs46mJRPO_zh8EjIxQ";
   if (token == null) return null;
   return "Bearer " + token;
 }
