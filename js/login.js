@@ -20,51 +20,53 @@ function login() {
     return;
   }
 
-  fetch("http://localhost:8080/api/v1/auth/authenticate", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // Authorization: getAuthorizationValue(),
-    },
-    body: JSON.stringify({ username, password }),
-  })
-    .then((response) => {
-      responseClone = response.clone();
+  window.location.replace("dashboard.html");
 
-      if (response.status === 200) {
-        console.log("Login successful!");
-      } else if (response.status === 401) {
-        console.log("Login failed!");
-      }
+  // fetch("http://localhost:8080/api/v1/auth/authenticate", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     // Authorization: getAuthorizationValue(),
+  //   },
+  //   body: JSON.stringify({ username, password }),
+  // })
+  //   .then((response) => {
+  //     responseClone = response.clone();
 
-      return response.json();
-    })
-    .then((data) => {
-      if (data.token != null) window.location.replace("dashboard.html");
-      else {
-        console.log(data.errorMessage);
-        {
-          $("#error-message").addClass("active");
-          $(document).keypress((e) => {
-            $("#close").click();
-            $(document).unbind(e);
-          });
-        }
-        // window.location.reload();
-      }
+  //     if (response.status === 200) {
+  //       console.log("Login successful!");
+  //     } else if (response.status === 401) {
+  //       console.log("Login failed!");
+  //     }
 
-      console.log(data);
-    })
-    .catch((rejectionReason) => {
-      console.log(
-        "Error parsing JSON from response:",
-        rejectionReason,
-        responseClone
-      );
-      responseClone.text().then((bodyText) => {
-        console.log("Received the following instead of valid JSON:", bodyText);
-      });
-    });
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     if (data.token != null) window.location.replace("dashboard.html");
+  //     else {
+  //       console.log(data.errorMessage);
+  //       {
+  //         $("#error-message").addClass("active");
+  //         $(document).keypress((e) => {
+  //           $("#close").click();
+  //           $(document).unbind(e);
+  //         });
+  //       }
+  //       // window.location.reload();
+  //     }
+
+  //     console.log(data);
+  //   })
+  //   .catch((rejectionReason) => {
+  //     console.log(
+  //       "Error parsing JSON from response:",
+  //       rejectionReason,
+  //       responseClone
+  //     );
+  //     responseClone.text().then((bodyText) => {
+  //       console.log("Received the following instead of valid JSON:", bodyText);
+  //     });
+  //   });
 }
 
 var button = $("button:submit");
@@ -132,11 +134,7 @@ $("#close").click((e) => {
 function getAuthorizationValue() {
   //   const token = getCookie("token");
   const token =
-<<<<<<< Updated upstream
     "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjQ5MDAwMiwiZXhwIjoxNjkyNDkxNDQyfQ.0o8XF5ewU3MC0JaedX1ze3PXvPs46mJRPO_zh8EjIxQ";
-=======
-    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MjIxNTY2MywiZXhwIjoxNjk3Mzk5NjYzfQ.yI4Xbx0uVhTTWHHfoT7vZbdPzbilJTzuJXZAdVe_hZ8";
->>>>>>> Stashed changes
   if (token == null) return null;
   return "Bearer " + token;
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/resources//fontawesome-free-6.4.2-web/css/all.css">
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <nav>
@@ -31,7 +32,7 @@
                 </div>
             </div>
             <div class="new-book">
-                <button>
+                <button class="new-book-button">
                     <p>ADD A NEW BOOK</p> 
                 </button>
             </div>
@@ -72,8 +73,32 @@
         <div class="middle-container">
             <div class="admin-salutation">
                 <h2>Admin, what would you like to do?</h2>
-                <a href="">Reports</a>
+                <div class="admin-actions">
+                    <a href="">View Reports</a>
+                    <a href="">Add a User</a>
+                    <a href="">Add a New Book</a>
+                </div>
                 <div class="admin-salutation-cover"></div>
+            </div>
+
+            <div class="admin-library-info">
+                <div class="admin-library-info-container">
+                    <div class="admin-books-info">
+                        <i class='bx bx-book-open bx-lg'></i>
+                        <h3> 40 Total Books</h3>
+                    </div>
+                    <div class="admin-available-books-info">
+                        <i class='bx bxs-book-reader bx-lg' style="background: #e1ecc5;"></i>
+                        <h3>20 Available Books</h3>
+                    </div>
+                    <div class="admin-users-info">
+                        <i class='bx bx-user bx-lg'></i>
+                        <h3>50 Users</h3>
+                    </div>
+                    <div class="admin-owed-books-info">
+
+                    </div>
+                </div>
             </div>
         </div>
         <div class="right-pane"></div>

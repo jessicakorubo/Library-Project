@@ -56,6 +56,8 @@ nav .menu{
     align-items: center;
 }
 
+
+
 .new-book button{
     color: black;
     border-radius: 100px;
@@ -65,7 +67,13 @@ nav .menu{
     text-align: center;
     background-color: transparent;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
+
+
+
+
 
 .new-book button:hover{
     background-color: #FEEDB5;
@@ -176,6 +184,7 @@ nav .menu{
 .middle-container{
     width: 60%;
     padding: 3% 5%;
+    background-color: #f1f1f1;
 }
 
 .admin-salutation{
@@ -187,6 +196,15 @@ nav .menu{
     position: relative;
     color: white;
 }
+
+.admin-actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .admin-actions > a{
+    width: 30%;
+} */
 
 
 .admin-salutation > *:not(.admin-salutation-cover){
@@ -217,7 +235,7 @@ nav .menu{
     padding: 10px;
     color: white;
     border-radius: 10px;
-    width: 10%;
+    width: 20%;
     display: block;
     text-align: center;
 }
@@ -227,6 +245,30 @@ nav .menu{
     cursor: pointer;
 }
 
+.admin-library-info-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-gap: 25px;
+    margin-top: 10px;
+    height: 200px;
+}
+
+.admin-library-info-container > div{
+    display: flex;
+    justify-content: space-around;
+    background-color: #F9FAFC;
+    border-radius: 20px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.admin-library-info-container > div > i{
+    background: #FEEDB5;
+    border-radius: 10px;
+    padding: 20px;
+}
+
 .right-pane{
     width: 20%;
+    background-color: #f1f1f1;
 }
