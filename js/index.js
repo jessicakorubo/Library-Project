@@ -20,6 +20,16 @@ $('.sidebar-menu-options').children().each((index, option) => {
  })
 });
 
+$('.summary-header').click(() => {
+  console.log('clicked');
+  $('.book-summary .content').addClass('active');
+  if ($('.book-summary .content').hasClass('active')) {
+      $('.book-summary .content').removeClass('active');
+  }
+  else {
+    $('.book-summary .content').addClass('active');
+  }
+})
 
 // delBtn.forEach(btn => {
 
